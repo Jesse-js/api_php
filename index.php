@@ -6,7 +6,7 @@ header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 $method = $_SERVER['REQUEST_METHOD'];
-$route = [explode('/', trim($_SERVER['PATH_INFO'], '/'))];
+$route = [explode('/', trim($_GET['path'], '/'))];
 $request = json_decode(file_get_contents('php://input'));
 
 switch ($method) {
